@@ -6,7 +6,7 @@
 /*   By: sklaokli <sklaokli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 12:09:00 by sklaokli          #+#    #+#             */
-/*   Updated: 2025/11/23 23:18:23 by sklaokli         ###   ########.fr       */
+/*   Updated: 2025/12/03 23:31:54 by sklaokli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,18 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 
 	public:
 	
 		ScavTrap( void );
-		ScavTrap( std::string name );
+		ScavTrap( const std::string& name );
 		ScavTrap( const ScavTrap& other );
-		~ScavTrap( void );
+		virtual	~ScavTrap( void );
 
-		ScavTrap&	operator=( const ScavTrap& other );
-
-		void	attack( const std::string& target );
-		void	guardGate( void ) const;
+		ScavTrap&		operator=( const ScavTrap& other );
+		virtual void	attack( const std::string& target );
+		void			guardGate( void ) const;
 
 };
 

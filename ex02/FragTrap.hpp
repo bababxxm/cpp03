@@ -6,7 +6,7 @@
 /*   By: sklaokli <sklaokli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:01:29 by sklaokli          #+#    #+#             */
-/*   Updated: 2025/11/23 23:18:20 by sklaokli         ###   ########.fr       */
+/*   Updated: 2025/12/03 23:23:06 by sklaokli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,17 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 
 	public:
 
 		FragTrap( void );
-		FragTrap( std::string name );
+		FragTrap( const std::string& name );
 		FragTrap( const FragTrap& other );
-		~FragTrap( void );
+		virtual	~FragTrap( void );
 		
 		FragTrap&	operator=( const FragTrap& other );
-
-		void	highFivesGuys( void );
+		void		highFivesGuys( void );
 
 };
 
